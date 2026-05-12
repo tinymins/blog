@@ -1,5 +1,62 @@
 import './About.css'
 
+const pinnedRepos = [
+  {
+    name: 'fullstack.rs',
+    url: 'https://github.com/tinymins/fullstack.rs',
+    description: 'Production-ready full-stack boilerplate: Rust (Axum) backend + React 19 SPA, managed as a pnpm monorepo. Auth, multi-workspace, i18n (5 langs), dark mode, WASM, one-command Docker.',
+    language: 'TypeScript',
+    langColor: '#3178c6',
+    stars: 0,
+    homepage: '',
+  },
+  {
+    name: 'vue-boilerplate',
+    url: 'https://github.com/tinymins/vue-boilerplate',
+    description: 'Boilerplate for building SPA or chrome extension with Vue.js 2',
+    language: 'TypeScript',
+    langColor: '#3178c6',
+    stars: 4,
+    homepage: '',
+  },
+  {
+    name: 'JX3MY',
+    url: 'https://github.com/tinymins/JX3MY',
+    description: '剑侠情缘网络版叁砭芑插件集',
+    language: 'Lua',
+    langColor: '#000080',
+    stars: 153,
+    homepage: 'http://jx3.derzh.com/',
+  },
+  {
+    name: 'PostMessage.NET',
+    url: 'https://github.com/tinymins/PostMessage.NET',
+    description: 'C#后台模拟按键 适用于《剑网3》PVE多段宏、以及其他需要解放双手的场景',
+    language: 'C#',
+    langColor: '#178600',
+    stars: 30,
+    homepage: '',
+  },
+  {
+    name: 'DisposeObject.c',
+    url: 'https://github.com/tinymins/DisposeObject.c',
+    description: 'Dispose object from other process by object id.',
+    language: 'C',
+    langColor: '#555555',
+    stars: 2,
+    homepage: '',
+  },
+  {
+    name: 'typecho-plugin-Access',
+    url: 'https://github.com/tinymins/typecho-plugin-Access',
+    description: 'Typecho Access 插件',
+    language: 'CSS',
+    langColor: '#663399',
+    stars: 1,
+    homepage: 'https://kotori.love/archives/typecho-plugin-access.html',
+  },
+]
+
 export default function About() {
   return (
     <div className="about">
@@ -77,6 +134,31 @@ export default function About() {
             <span>App</span>
           </div>
         </a>
+
+        <div className="projects-grid">
+          {pinnedRepos.map(repo => (
+            <article className="project-card" key={repo.name}>
+              <div className="project-card-header">
+                <a className="project-name" href={repo.url} target="_blank" rel="noopener noreferrer">
+                  {repo.name}
+                </a>
+              </div>
+              <p className="project-desc">{repo.description}</p>
+              <div className="project-footer">
+                <span className="project-language">
+                  <span className="project-language-dot" style={{ backgroundColor: repo.langColor }} />
+                  {repo.language}
+                </span>
+                <span className="project-stars">★ {repo.stars}</span>
+                {repo.homepage && (
+                  <a className="project-homepage" href={repo.homepage} target="_blank" rel="noopener noreferrer">
+                    Homepage ↗
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="about-section about-contact">

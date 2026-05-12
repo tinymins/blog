@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import type { Issue } from '../api'
+import type { ParsedIssue } from '../api'
 import './Post.css'
 
 interface PostProps {
-  issue: Issue
+  issue: ParsedIssue
 }
 
 export default function Post({ issue }: PostProps) {
@@ -31,7 +31,7 @@ export default function Post({ issue }: PostProps) {
           <span className="post-author-name">{issue.user.login}</span>
           <span className="post-row2-sep">·</span>
           <time className="post-date">
-            {new Date(issue.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+            {new Date(issue.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
           </time>
           {issue.comments > 0 && (
             <>

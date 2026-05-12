@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { marked } from 'marked'
 import { getIssue } from '../api'
-import type { Issue } from '../api'
+import type { ParsedIssue } from '../api'
 import Comments from '../components/Comments'
 import 'github-markdown-css/github-markdown.css'
 import './PostDetail.css'
 
 export default function PostDetail() {
   const { number } = useParams<{ number: string }>()
-  const [issue, setIssue] = useState<Issue | null>(null)
+  const [issue, setIssue] = useState<ParsedIssue | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -29,7 +29,7 @@ export default function PostDetail() {
     </div>
   )
 
-  const html = (marked.parse(issue.body || '') as string).replace(/^<h1[^>]*>.*?<\/h1>\s*/i, '')
+  const html = (marked.parse(issue.bodyContent || '') as string).replace(/^<h1[^>]*>.*?<\/h1>\s*/i, '')
 
   return (
     <div className="post-detail">
@@ -39,7 +39,7 @@ export default function PostDetail() {
       <article className="detail-article">
         <h1 className="detail-title">{issue.title}</h1>
         <div className="detail-meta">
-          <time>{new Date(issue.created_at).toLocaleDateString('zh-CN')}</time>
+          <time>{new Date(issue.publishedAt).toLocaleDateString('zh-CN')}</time>
           {issue.labels.map(label => (
             <span
               key={label.name}

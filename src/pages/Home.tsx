@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { getIssues, type Issue } from '../api'
+import { getIssues, type ParsedIssue } from '../api'
 import Post from '../components/Post'
 import './Home.css'
 
 const PER_PAGE = 20
 
 export default function Home() {
-  const [issues, setIssues] = useState<Issue[]>([])
+  const [issues, setIssues] = useState<ParsedIssue[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [page, setPage] = useState(1)
@@ -17,7 +17,10 @@ export default function Home() {
     setLoading(true)
     try {
       const data = await getIssues(p, PER_PAGE)
-      setIssues(prev => p === 1 ? data : [...prev, ...data])
+      setIssues(prev => {
+        const next = p === 1 ? data : [...prev, ...data]
+        return [...next].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+      })
       if (data.length < PER_PAGE) setHasMore(false)
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Failed to load')
@@ -46,10 +49,10 @@ export default function Home() {
   }, [page, loadPage])
 
   // Group issues by year with dividers
-  const rows: Array<{ type: 'year'; year: number } | { type: 'post'; issue: Issue }> = []
+  const rows: Array<{ type: 'year'; year: number } | { type: 'post'; issue: ParsedIssue }> = []
   let lastYear: number | null = null
   for (const issue of issues) {
-    const year = new Date(issue.created_at).getFullYear()
+    const year = new Date(issue.publishedAt).getFullYear()
     if (year !== lastYear) {
       rows.push({ type: 'year', year })
       lastYear = year
