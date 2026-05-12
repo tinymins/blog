@@ -112,16 +112,33 @@ export default function About() {
 
       <section className="about-section">
         <h2 className="about-section-title">Projects</h2>
-        <a
-          className="project-card project-card-featured"
-          href="https://github.com/tinymins"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <article className="project-card project-card-featured">
           <div className="project-card-header">
-            <span className="project-name">TokimoOS</span>
+            <a
+              className="project-name"
+              href="https://tokimo.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TokimoOS
+            </a>
             <div className="project-card-right">
-              <span className="project-live">GitHub ↗</span>
+              <a
+                className="project-live"
+                href="https://tokimo.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Website ↗
+              </a>
+              <a
+                className="project-live"
+                href="https://github.com/tokimo-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub ↗
+              </a>
             </div>
           </div>
           <p className="project-desc">
@@ -133,7 +150,7 @@ export default function About() {
             <span>System</span>
             <span>App</span>
           </div>
-        </a>
+        </article>
 
         <div className="projects-grid">
           {pinnedRepos.map(repo => (
