@@ -4,34 +4,43 @@ const pinnedRepos = [
   {
     name: 'fullstack.rs',
     url: 'https://github.com/tinymins/fullstack.rs',
-    description: 'Production-ready full-stack boilerplate: Rust (Axum) backend + React 19 SPA, managed as a pnpm monorepo. Auth, multi-workspace, i18n (5 langs), dark mode, WASM, one-command Docker.',
+    description: '全栈脚手架：Rust（Axum + Sea-ORM + PostgreSQL）后端配 React 19 + Router v7 + Tailwind 4 SPA，pnpm + Turborepo monorepo 管理，含 WASM 模块、鉴权、多工作区、5 语言 i18n、暗色模式，一行命令 Docker 部署。',
     language: 'TypeScript',
     langColor: '#3178c6',
     stars: 0,
     homepage: '',
   },
   {
-    name: 'vue-boilerplate',
-    url: 'https://github.com/tinymins/vue-boilerplate',
-    description: 'Boilerplate for building SPA or chrome extension with Vue.js 2',
+    name: 'drip-table',
+    url: 'https://github.com/jd-opensource/drip-table',
+    description: '京东开源的低代码表格可视化搭建方案：基于 React + TypeScript，提供拖拽式表格构建、可视化编辑器、模板复用、复杂表头与分组、多种渲染层（Antd / 原生 HTML），1.6k stars。作为核心贡献者参与开发，提交 670+ commits，占总贡献量 57%。',
     language: 'TypeScript',
     langColor: '#3178c6',
-    stars: 4,
-    homepage: '',
+    stars: 1666,
+    homepage: 'https://drip-table.jd.com',
   },
   {
     name: 'JX3MY',
     url: 'https://github.com/tinymins/JX3MY',
-    description: '剑侠情缘网络版叁砭芑插件集',
+    description: '《剑网3》茗伊插件集 —— Lua 编写的游戏内 PVE 辅助插件集合，30+ 模块覆盖聊天监控、喊话辅助、Roll 点统计、扁平血条、截图工具、共战检查、点数监控、技能可视化、仓库搜索等高频场景，全部开源免费。',
     language: 'Lua',
     langColor: '#000080',
     stars: 153,
     homepage: 'http://jx3.derzh.com/',
   },
   {
+    name: 'intercom2wifi.esp',
+    url: 'https://github.com/tinymins/intercom2wifi.esp',
+    description: 'JB-2201-F03 门禁话机智能化改造：用 D1-Mini（ESP8266 + ESPHome）替换原板，接入 Home Assistant 实现远程开门与门铃推送，让老式有线对讲机融入智能家居体系。',
+    language: 'ESPHome',
+    langColor: '#cb171e',
+    stars: 2,
+    homepage: '',
+  },
+  {
     name: 'PostMessage.NET',
     url: 'https://github.com/tinymins/PostMessage.NET',
-    description: 'C#后台模拟按键 适用于《剑网3》PVE多段宏、以及其他需要解放双手的场景',
+    description: 'C# 后台按键模拟工具，使用 Win32 PostMessage API 直接向目标窗口注入按键事件，无需窗口焦点。适用于《剑网3》PVE 多段宏等需要解放双手的场景。',
     language: 'C#',
     langColor: '#178600',
     stars: 30,
@@ -40,20 +49,47 @@ const pinnedRepos = [
   {
     name: 'DisposeObject.c',
     url: 'https://github.com/tinymins/DisposeObject.c',
-    description: 'Dispose object from other process by object id.',
+    description: 'C 实现的 Win32 命名 mutex 释放工具：枚举并关闭目标进程的命名互斥量句柄，破除游戏客户端的"同名 mutex 检测"，实现同一台机器多开。',
     language: 'C',
     langColor: '#555555',
     stars: 2,
     homepage: '',
   },
   {
-    name: 'typecho-plugin-Access',
-    url: 'https://github.com/tinymins/typecho-plugin-Access',
-    description: 'Typecho Access 插件',
-    language: 'CSS',
-    langColor: '#663399',
-    stars: 1,
-    homepage: 'https://kotori.love/archives/typecho-plugin-access.html',
+    name: 'vue-boilerplate',
+    url: 'https://github.com/tinymins/vue-boilerplate',
+    description: 'Vue 2 + TypeScript 项目模板，基于 Webpack 4。同一份代码可构建 SPA 或 Chrome 扩展，集成 HMR、ESLint / Stylelint / vue-eslint、px2rem / px2viewport，附带 cube-ui 与 element-ui 分支。',
+    language: 'TypeScript',
+    langColor: '#3178c6',
+    stars: 4,
+    homepage: '',
+  },
+  {
+    name: 'luadata',
+    url: 'https://github.com/tinymins/luadata',
+    description: 'npm 工具包：JavaScript / TypeScript 与 Lua 数据格式互转，把 JS 数组与对象序列化成 Lua table 字面量，或反向解析回来。配合《剑网3》Lua 插件开发，做配置生成与数据迁移的桥梁。',
+    language: 'TypeScript',
+    langColor: '#3178c6',
+    stars: 5,
+    homepage: '',
+  },
+]
+
+const moreRepos = [
+  {
+    name: 'font-conv',
+    url: 'https://github.com/tinymins/font-conv',
+    description: 'Python 字体处理工具：合并 TrueType 字体并自定义 code point 映射，专为简繁中文转换设计；同时支持 OTF ↔ TTF 互转。',
+  },
+  {
+    name: 'PUBGMortar.NET',
+    url: 'https://github.com/tinymins/PUBGMortar.NET',
+    description: 'Windows 桌面应用：根据水平距离与仰角计算 PUBG 迫击炮的距离设置，辅助玩家精准投射。',
+  },
+  {
+    name: 'eslint-config-lvmcn',
+    url: 'https://github.com/tinymins/eslint-config-lvmcn',
+    description: '个人 ESLint 配置预设，含 TypeScript 支持，统一全部前端项目的代码风格。',
   },
 ]
 
@@ -176,6 +212,29 @@ export default function About() {
             </article>
           ))}
         </div>
+
+        <article className="project-card project-card-featured project-card-more">
+          <div className="project-card-header">
+            <span className="project-name">更多项目</span>
+            <a
+              className="project-live"
+              href="https://github.com/tinymins?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              全部仓库 ↗
+            </a>
+          </div>
+          <ul className="more-projects-list">
+            {moreRepos.map(repo => (
+              <li key={repo.name}>
+                <a href={repo.url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
+                <span className="more-projects-sep"> — </span>
+                <span className="more-projects-desc">{repo.description}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
       </section>
 
       <section className="about-section about-contact">
