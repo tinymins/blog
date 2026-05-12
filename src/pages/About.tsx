@@ -178,13 +178,14 @@ export default function About() {
             </div>
           </div>
           <p className="project-desc">
-            正在开发的系统、App 与 Agent 项目集合，探索 AI Native 的个人操作系统与应用体验。
+            在浏览器中运行的自托管桌面操作系统，100% Rust + WASM 自研。15+ 核心 crate 覆盖窗口管理、多媒体刮削、AI Agent、跨存储 VFS（本地/SFTP/SMB/S3/115）、本地 ONNX 推理（OCR/CLIP/人脸/STT）、跨平台沙箱与多数据库统一接入。模型 / 工具 / 存储自由编排，私有部署，数据不出服务器。
           </p>
           <div className="project-tags">
-            <span>AI</span>
-            <span>Agent</span>
-            <span>System</span>
-            <span>App</span>
+            <span>Rust</span>
+            <span>WASM</span>
+            <span>Self-Hosted</span>
+            <span>AI Agent</span>
+            <span>Desktop OS</span>
           </div>
         </article>
 
