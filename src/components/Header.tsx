@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SearchBox from './SearchBox'
 import './Header.css'
 
 export default function Header() {
@@ -9,6 +10,7 @@ export default function Header() {
           <img className="header-avatar" src="/assets/avatar.png" alt="avatar" />
           <span className="header-name">Emil Zhai</span>
         </Link>
+        <SearchBox />
         <nav className="header-nav">
           <Link to="/blog">Blog</Link>
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/tinymins">GitHub</a>

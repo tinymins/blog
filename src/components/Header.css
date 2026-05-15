@@ -105,8 +105,23 @@
   }
 
   .header-nav a {
-    padding: 4px 8px;
+    padding: 8px 10px;
     font-size: 13px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
   }
+}
+
+.header-name {
+  flex-shrink: 0;
+}
+
+.header-nav {
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .header-name { display: none; }
 }
 

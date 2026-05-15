@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import PostDetail from './pages/PostDetail'
+import Search from './pages/Search'
 import NotFound from './pages/NotFound'
 import { initAnalytics } from './analytics'
 import { useAnalytics } from './useAnalytics'
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/" element={<About />} />
         <Route path="/blog" element={<Home />} />
         <Route path="/post/:number" element={<PostDetail />} />
+        <Route path="/search" element={<Search />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
