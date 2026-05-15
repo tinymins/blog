@@ -44,6 +44,10 @@ Pushing to `main` triggers `.github/workflows/deploy.yml` which builds and deplo
 
 Optional: analytics (Google Analytics 4 + Microsoft Clarity) can be enabled via two repository secrets — see [`docs/ANALYTICS.md`](docs/ANALYTICS.md).
 
+## For AI assistants
+
+Conventions and maintenance routines (esp. **delete orphan labels after publishing / unpublishing posts**) are documented in [`AGENTS.md`](AGENTS.md).
+
 ## Custom domain
 
 `public/CNAME` contains `minrc.com`. To change domain:
