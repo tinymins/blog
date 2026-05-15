@@ -31,10 +31,32 @@
   align-items: center;
 }
 
-.searchbox-icon {
+.searchbox-icon-inline {
   position: absolute;
-  left: 10px;
-  color: #999;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #777;
+  transition: background 0.12s, color 0.12s;
+  z-index: 1;
+}
+
+.searchbox-icon-inline:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #111;
+}
+
+.searchbox-icon {
   pointer-events: none;
 }
 
@@ -135,6 +157,10 @@
 @media (prefers-color-scheme: dark) {
   .searchbox-icon-btn { color: #999; }
   .searchbox-icon-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #eee;
+  }
+  .searchbox-icon-inline:hover {
     background: rgba(255, 255, 255, 0.08);
     color: #eee;
   }
