@@ -42,6 +42,8 @@ npm run lint
 
 Pushing to `main` triggers `.github/workflows/deploy.yml` which builds and deploys to GitHub Pages via `actions/deploy-pages@v4`. No secrets required.
 
+Optional: analytics (Google Analytics 4 + Microsoft Clarity) can be enabled via two repository secrets — see [`docs/ANALYTICS.md`](docs/ANALYTICS.md).
+
 ## Custom domain
 
 `public/CNAME` contains `minrc.com`. To change domain:
