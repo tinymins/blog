@@ -37,11 +37,8 @@
   }
 }
 
-/* Row 1: title + labels */
+/* Row 1: title */
 .post-row1 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   min-width: 0;
 }
 
@@ -86,7 +83,7 @@
   white-space: nowrap;
 }
 
-/* Row 2: avatar + author + date + comments */
+/* Row 2: avatar + author + date + comments + labels */
 .post-row2 {
   display: flex;
   align-items: center;
@@ -149,5 +146,18 @@
 @media (max-width: 768px) {
   .post-card { padding: 14px 16px; }
   .post-title { font-size: 14px; }
+
+  .post-row2 {
+    flex-wrap: wrap;
+  }
+
+  .post-labels {
+    flex-basis: 100%;
+    flex-shrink: 1;
+    overflow: hidden;
+    padding-top: 2px;
+    mask-image: linear-gradient(to right, #000 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 90%, transparent 100%);
+  }
 }
 

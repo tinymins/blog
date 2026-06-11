@@ -12,19 +12,6 @@ export default function Post({ issue }: PostProps) {
       <article className="post-card">
         <div className="post-row1">
           <h2 className="post-title">{issue.title}</h2>
-          {issue.labels.length > 0 && (
-            <div className="post-labels">
-              {issue.labels.map(label => (
-                <span
-                  key={label.name}
-                  className="post-label"
-                  style={{ background: `#${label.color}20`, color: `#${label.color}`, borderColor: `#${label.color}40` }}
-                >
-                  {label.name}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
         <div className="post-row2">
           <img src={issue.user.avatar_url} alt={issue.user.login} className="post-author-avatar" />
@@ -43,6 +30,19 @@ export default function Post({ issue }: PostProps) {
                 {issue.comments}
               </span>
             </>
+          )}
+          {issue.labels.length > 0 && (
+            <div className="post-labels">
+              {issue.labels.map(label => (
+                <span
+                  key={label.name}
+                  className="post-label"
+                  style={{ background: `#${label.color}20`, color: `#${label.color}`, borderColor: `#${label.color}40` }}
+                >
+                  {label.name}
+                </span>
+              ))}
+            </div>
           )}
         </div>
       </article>
