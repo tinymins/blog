@@ -37,9 +37,13 @@
   }
 }
 
-/* Row 1: title */
+/* Row 1: title + labels */
 .post-row1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   min-width: 0;
+  position: relative;
 }
 
 .post-title {
@@ -71,7 +75,12 @@
 .post-labels {
   display: flex;
   gap: 5px;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 45%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, #000 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 85%, transparent 100%);
 }
 
 .post-label {
@@ -147,17 +156,16 @@
   .post-card { padding: 14px 16px; }
   .post-title { font-size: 14px; }
 
-  .post-row2 {
-    flex-wrap: wrap;
+  .post-labels {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    max-width: 100%;
+    padding-top: 6px;
   }
 
-  .post-labels {
-    flex-basis: 100%;
-    flex-shrink: 1;
-    overflow: hidden;
-    padding-top: 2px;
-    mask-image: linear-gradient(to right, #000 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, #000 90%, transparent 100%);
+  .post-row2 {
+    padding-bottom: 26px;
   }
 }
 
