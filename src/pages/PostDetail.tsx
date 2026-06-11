@@ -4,6 +4,7 @@ import { marked } from 'marked'
 import { getIssue } from '../api'
 import type { ParsedIssue } from '../api'
 import Comments from '../components/Comments'
+import { countWords, readingTime } from '../utils'
 import 'github-markdown-css/github-markdown.css'
 import './PostDetail.css'
 
@@ -29,6 +30,8 @@ export default function PostDetail() {
     </div>
   )
 
+  const wordCount = countWords(issue.bodyContent || '')
+  const minutes = readingTime(wordCount)
   const html = (marked.parse(issue.bodyContent || '') as string).replace(/^<h1[^>]*>.*?<\/h1>\s*/i, '')
 
   return (
@@ -40,6 +43,7 @@ export default function PostDetail() {
         <h1 className="detail-title">{issue.title}</h1>
         <div className="detail-meta">
           <time>{new Date(issue.publishedAt).toLocaleDateString('zh-CN')}</time>
+          <span className="detail-reading-info">{wordCount} 字 · 约 {minutes} 分钟</span>
           {issue.labels.map(label => (
             <span
               key={label.name}

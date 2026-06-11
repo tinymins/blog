@@ -85,6 +85,20 @@
   .detail-meta { border-bottom-color: rgba(255, 255, 255, 0.08); }
 }
 
+.detail-reading-info {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.detail-reading-info::before {
+  content: '·';
+  margin: 0 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .detail-reading-info { color: #666; }
+}
+
 .detail-github-link {
   margin-left: auto;
   font-size: 12px;
