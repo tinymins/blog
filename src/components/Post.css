@@ -78,8 +78,6 @@
   gap: 5px;
   min-width: 0;
   overflow: hidden;
-  mask-image: linear-gradient(to right, #000 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, #000 85%, transparent 100%);
 }
 
 .post-label {
