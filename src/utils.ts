@@ -14,7 +14,7 @@ export function countWords(markdown: string): number {
     .replace(/<[^>]*>/g, '')          // HTML tags
     .replace(/[-*+]\s/g, '')          // list markers
     .replace(/\d+\.\s/g, '')         // ordered list markers
-    .replace(/[>|\-]/g, '')          // blockquotes, horizontal rules
+    .replace(/[>|-]/g, '')           // blockquotes, horizontal rules
     .trim()
 
   // Count Chinese characters
