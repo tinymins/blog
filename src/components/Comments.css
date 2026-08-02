@@ -196,6 +196,10 @@
   background: transparent !important;
 }
 
+.comment-content.markdown-body img {
+  height: auto;
+}
+
 .comment-content.markdown-body > *:first-child { margin-top: 0 !important; }
 .comment-content.markdown-body > *:last-child { margin-bottom: 0 !important; }
 
