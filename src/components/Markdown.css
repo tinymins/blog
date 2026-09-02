@@ -1,0 +1,9 @@
+.markdown-body .mermaid-diagram {
+  margin: 0 0 16px;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.markdown-body .mermaid-diagram > svg {
+  height: auto;
+}

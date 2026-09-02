@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { marked } from 'marked'
 import { getIssue } from '../api'
 import type { ParsedIssue } from '../api'
 import Comments from '../components/Comments'
+import Markdown from '../components/Markdown'
 import { countWords, readingTime } from '../utils'
-import 'github-markdown-css/github-markdown.css'
 import './PostDetail.css'
 
 export default function PostDetail() {
@@ -32,7 +31,6 @@ export default function PostDetail() {
 
   const wordCount = countWords(issue.bodyContent || '')
   const minutes = readingTime(wordCount)
-  const html = (marked.parse(issue.bodyContent || '') as string).replace(/^<h1[^>]*>.*?<\/h1>\s*/i, '')
 
   return (
     <div className="post-detail">
@@ -62,12 +60,10 @@ export default function PostDetail() {
             在 GitHub 查看 ↗
           </a>
         </div>
-        <div
-          className="markdown-body detail-body"
-          data-color-mode="auto"
-          data-light-theme="light"
-          data-dark-theme="dark"
-          dangerouslySetInnerHTML={{ __html: html }}
+        <Markdown
+          className="detail-body"
+          content={issue.bodyContent || ''}
+          omitFirstHeading
         />
       </article>
       <Comments issueNumber={issue.number} issueUrl={issue.html_url} totalComments={issue.comments} />

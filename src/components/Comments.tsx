@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { marked } from 'marked'
 import { getIssueComments } from '../api'
 import type { Comment } from '../api'
+import Markdown from './Markdown'
 import './Comments.css'
 
 interface Props {
@@ -85,12 +85,9 @@ export default function Comments({ issueNumber, issueUrl, totalComments }: Props
                       在 GitHub 查看 ↗
                     </a>
                   </div>
-                  <div
-                    className="markdown-body comment-content"
-                    data-color-mode="auto"
-                    data-light-theme="light"
-                    data-dark-theme="dark"
-                    dangerouslySetInnerHTML={{ __html: marked.parse(comment.body || '') as string }}
+                  <Markdown
+                    className="comment-content"
+                    content={comment.body || ''}
                   />
                 </div>
               </li>
